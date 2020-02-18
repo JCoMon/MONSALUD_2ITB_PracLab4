@@ -15,10 +15,10 @@ function validate() {
 function logValidation() {
     let login = document.getElementById("login");
     if (login.value == "") {
-        login.style.backgroundColor = rgb(255, 180, 180);
+        login.style.backgroundColor = "rgb(255, 180, 180)";
         return false;
     } else {
-        login.style.backgroundColor = rgb(220, 250, 165);
+        login.style.backgroundColor = "rgb(220, 250, 165)";
         return true;
     }
 }
@@ -26,10 +26,10 @@ function logValidation() {
 function pswrdValidation() {
     let pswrd = document.getElementById("password");
     if (pswrd.value == "") {
-        pswrd.style.backgroundColor = rgb(255, 180, 180);
+        pswrd.style.backgroundColor = "rgb(255, 180, 180)";
         return false;
     } else {
-        pswrd.style.backgroundColor = rgb(220, 250, 165);
+        pswrd.style.backgroundColor = "rgb(220, 250, 165)";
         return true;
     }
 }
@@ -38,11 +38,11 @@ function confirmPswrd() {
     let confirm = document.getElementById("confirm");
     if (samePassword() == false) {
         document.getElementById("samePass").innerHTML = "Passwords are not the same";
-        confirm.style.backgroundColor = rgb(255, 180, 180);
+        confirm.style.backgroundColor = "rgb(255, 180, 180)";
         return false;
     } else {
         document.getElementById("samePass").innerHTML = "";
-        confirm.style.backgroundColor = rgb(220, 250, 165);
+        confirm.style.backgroundColor = "rgb(220, 250, 165)";
         return true;
     }
 }
@@ -51,11 +51,11 @@ function eValidation() {
     let email = document.getElementById("email");
     if (email.value == "") {
         document.getElementById("wrongEmail").innerHTML = "Mail is wrong";
-        email.style.backgroundColor = rgb(255, 180, 180);
+        email.style.backgroundColor = "rgb(255, 180, 180)";
         return false;
      } else {
         document.getElementById("wrongEmail").innerHTML = "";
-        email.style.backgroundColor = rgb(220, 250, 165);
+        email.style.backgroundColor = "rgb(220, 250, 165)";
         return true;
     }
 }
@@ -94,18 +94,18 @@ function samePassword() {
 function submit() {
     
     let comparePass = samePassword();
-    let correct = eValidation();
+    let email = eValidation();
     
     if (comparePass == true) {
-        if (correct == true) {
+        if (email == true) {
             alert ("Registration Form submitted!");
-            document.getElementsByClassName("logForm").reset();
+            document.getElementsByClassName("Form").reset();
         } else {
             document.getElementById("wrongEmail").innerHTML = "Mail is wrong";
-            document.getElementsByClassName("logForm").reset();
+            document.getElementsByClassName("Form").reset();
         }
     } else {
         document.getElementById("samePass").innerHTML = "Passwords are not the same";
-        document.getElementsByClassName("logForm").reset();
+        document.getElementsByClassName("Form").reset();
     }
 }
