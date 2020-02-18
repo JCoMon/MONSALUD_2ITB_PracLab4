@@ -1,58 +1,111 @@
-function validate(p) {
+function validate() {
     
-    let login = document.getElementById("login");
-    let pswrd = document.getElementById("password");
-    let confirm = document.getElementById("confirm");
-    let gender = document.getElementById("genderDropdwn");
-    let email = document.getElementById("email");
+    let login = logValidation();
+    let pswrd = pswrdValidation();
+    let confirm = confirmPswrd();
+    let email = eValidation();
     
-    if (login.value == "") {
-        style.backgroundColor = "red";
-    } 
+    if (login == true && pswrd == true && confirm == true && email == true) {
+        alert ("Registration Form submitted!");
+    } else {
+        alert("Submission of Form has failed!");
+    }  
+}
 
-    if (pswrd.value == "") {
-        alert("Missing Password");
-    } 
-    
-    if (confirm.value == "" || confirm.value != pswrd.value) {
-        document.getElementById("samePass").innerHTML = "Passwords are not the same";
-    } 
-    
-    if (confirm.value == pswrd.value) {
-        document.getElementById("samePass").innerHTML = "";
-    } 
-    
-    if (gender.value == "") {
-        alert("Missing Gender");
-    } 
-    
-    if (email.value == "") {
-        document.getElementById("emailWrong").innerHTML = "Mail is wrong";
-    } 
-    
-    if (email.value != "") {
-        document.getElementById("emailWrong").innerHTML = "";
+function logValidation() {
+    let login = document.getElementById("login");
+    if (login.value == "") {
+        login.style.backgroundColor = rgb(255, 180, 180);
+        return false;
+    } else {
+        login.style.backgroundColor = rgb(220, 250, 165);
+        return true;
     }
-    
-    if (login.value != "" && pswrd.value != "" && pswrd.value != "" && confirm.value == pswrd.value && gender.value != "" && email.value != "") {
-        document.getElementsByClassName("logForm").submit();
-        alert ("Login Credentials sent for processing...");
-        document.getElementsByClassName("logForm").reset();
+}
+
+function pswrdValidation() {
+    let pswrd = document.getElementById("password");
+    if (pswrd.value == "") {
+        pswrd.style.backgroundColor = rgb(255, 180, 180);
+        return false;
+    } else {
+        pswrd.style.backgroundColor = rgb(220, 250, 165);
+        return true;
+    }
+}
+
+function confirmPswrd() {
+    let confirm = document.getElementById("confirm");
+    if (samePassword() == false) {
+        document.getElementById("samePass").innerHTML = "Passwords are not the same";
+        confirm.style.backgroundColor = rgb(255, 180, 180);
+        return false;
+    } else {
+        document.getElementById("samePass").innerHTML = "";
+        confirm.style.backgroundColor = rgb(220, 250, 165);
+        return true;
+    }
+}
+
+function eValidation() {
+    let email = document.getElementById("email");
+    if (email.value == "") {
+        document.getElementById("wrongEmail").innerHTML = "Mail is wrong";
+        email.style.backgroundColor = rgb(255, 180, 180);
+        return false;
+     } else {
+        document.getElementById("wrongEmail").innerHTML = "";
+        email.style.backgroundColor = rgb(220, 250, 165);
+        return true;
     }
 }
 
 function checkPass() {
     
-    let password = document.getElementById("pass").value;
+    let pswrd = document.getElementById("password").value;
     let status = document.getElementById("passStatus");
     
-    if (password.length = 8) {
-        status.innerHTML = "Strong";
-    } else if (password.length = 5) {
-        status.innerHTML = "Medium";
-    } else if (password.length = 3) {
-        status.innerHTML = "Weak";
-    } else if (password.length = 0) {
+    if (pswrd.length == 0) {
         status.innerHTML = "";
+    } else if (pswrd.length >= 1 && pswrd.length < 4) {
+        status.innerHTML = "Weak";
+    } else if (pswrd.length >= 4 && pswrd.length < 8) {
+        status.innerHTML = "Medium";
+    } else if (pswrd.length >= 8) {
+        status.innerHTML = "Strong";
+    }
+}
+
+function samePassword() {
+
+    let pswrd = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+
+    if (pswrd == "" && confirm == "") {
+        return false;
+    } else if (pswrd!= confirm) {
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+function submit() {
+    
+    let comparePass = samePassword();
+    let correct = eValidation();
+    
+    if (comparePass == true) {
+        if (correct == true) {
+            alert ("Registration Form submitted!");
+            document.getElementsByClassName("logForm").reset();
+        } else {
+            document.getElementById("wrongEmail").innerHTML = "Mail is wrong";
+            document.getElementsByClassName("logForm").reset();
+        }
+    } else {
+        document.getElementById("samePass").innerHTML = "Passwords are not the same";
+        document.getElementsByClassName("logForm").reset();
     }
 }

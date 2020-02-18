@@ -11,37 +11,37 @@
     <div class = "blackBox">
         <form class = "Form">
             <div class = "greyBox">
-                <label id = "label" for = "login">Login</label>
+
+                <label id = "lbl" for = "login">Login</label>
                 <input id = "login" type= "text" name = "login" required>
                 
                 <br>
                 <br>
                 
-                <label id = "label" for = "pass">Password</label>
-                <input id = "password" type= "password" name = "password" onchange = "checkPass()" required> 
+                <label id = "lbl" for = "password">Password</label>
+                <input id = "password" type= "password" name = "password" onkeydown = "checkPass()" onkeyup = "checkPass()" required> 
                 <span id = "passStatus"></span>
                 
                 <br>
                 <br>
                 
-                <label id = "label" for = "confirm">Confirm Password</label>
+                <label id = "lbl" for = "confirm">Confirm Password</label>
                 <input id = "confirm" type= "password" name = "confirm" required> 
                 
                 <br>
                 <br>
                 
-                <label id = "label" for = "gender">Gender</label>
+                <label id = "lbl" for = "gender">Gender</label>
                 <select id = "genderDropdwn" name = "gender" required>
                     <option value = "male">male</option>
                     <option value = "female">female</option>
-                    <option value = "other">other</option>
                 </select>
                 
                 <br>
                 <br>
                 
-                <label id = "label" for = "email">Email</label>
-                <input id = "email" type= "email" name = "email" required>
+                <label id = "lbl" for = "email">Email</label>
+                <input id = "email" type= "email" name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 
                 <br>
                 <br>
@@ -53,6 +53,7 @@
                 
                 <p id = "samePass"></p>
                 <p id = "wrongEmail"></p>
+
             </div>
         </form>
     </div>

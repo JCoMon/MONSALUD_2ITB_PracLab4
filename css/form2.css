@@ -2,71 +2,97 @@ body{
     background-color: black;
 }
 
-  
-  label {
-      color: white;
-      font-family: arial;
-  }
-  
-  p {
-      color: white;
-      font-family: arial;
-      margin: -10px 0px 6px 55px;
-      padding-bottom: 5px;   
-  }
-  
-  #passStatus{
-      color: white;
-      font-family: arial;
-  }
-  .blackBox {
-      margin-top: 15%;
-      margin-left: 33%;
-      margin-right: 33%;
-      border: 5px white solid;
-      background-color: black;
-  }
-  
-  .greyBox {
-      background-color: grey;
-      width: 465px;
-      margin: 20px;
-      padding-top: 20px;
-      padding-bottom: 5px;
-  }
-  
-  #label {
-      margin-left: 30px;
-      font-size: 12px;
-  }
-  
-  #register {
-      margin-left: 60px;
-      padding: 5px;
-      font-size: 15px;
-  }
-  
-  #login {
-      margin-left: 22%;
-  }
-  
-  #password {
-      margin-left: 17%;
-  }
-  
-  #confirm {
-      margin-left: 7%;
-  }
-  
-  #genderDropdwn {
-      margin-left: 19%;
-      width: 162px;
-  }
-  
-  #email {
-      margin-left: 101px;
-  }
+form {
+    background-color: #555;
+    display: block;
+    padding: 15px;
+}
+    
+.blackBox{
+    margin-top: 15%;
+    margin-left: 33%;
+    margin-right: 33%;
+    border: 5px white solid;
+    background-color: black;
+}
 
-  #samePass{
-      margin-left: 25%;
-  }
+.greyBox{
+    background-color: grey;
+    width: 440px;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=submit] {
+    border-radius: 2px;
+}
+
+
+input[type=text], input[type=password], input[type=email], select {
+    background-color: rgb(245, 255, 230);
+    border-color: rgb(180, 205, 95);
+    border-style: solid;
+    border-width: 1px;
+    font-size: 16px;
+    height: 25px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+input[type=submit]{
+    font-size: 16px;
+    height: 35px;
+    padding: 5px;
+}
+
+label{
+    color: white;
+    font-family: arial;
+}
+
+
+span{
+    color: white;
+    font-family: arial;
+}
+
+p {
+    color: white;
+    font-family: arial;
+    margin: -10px 0px 5px 55px;
+    padding-bottom: 5px;   
+}
+
+#lbl{
+    margin-left: 30px;
+    font-size: 12px;
+}
+
+
+#register{
+    margin-left: 60px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+#login{
+    margin-left: 22%;
+}
+
+#password{
+    margin-left: 17%;
+}
+
+#confirm{
+    margin-left: 7%;
+}
+
+#genderDropdwn{
+    margin-left: 20%;
+    width: 200px;
+}
+
+#email{
+    margin-left: 22%;
+}
